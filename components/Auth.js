@@ -23,7 +23,7 @@ export default function Auth(){
                 if(res.status === 400 ){
                     throw "authentication failed";
                 }else if(res.ok){
-                    return res.json
+                    return res.json();
                 }
             }).then((data) => {
                 const options = { path: "/" };

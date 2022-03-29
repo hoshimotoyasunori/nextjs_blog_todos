@@ -1,24 +1,37 @@
+import { useEffect } from "react";
 import Link from "next/link";
 import Layout from "../../components/Layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllTaskIds, getTaskData } from "../../lib/tasks";
 import { useRouter } from 'next/router';
+import useSWR from "swr";
 
-export default function Post({ post }){
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
+export default function Post({ staticTask, id }){
     const router = useRouter();
-
-    if(router.isFallback || !post){
+    const { data:task, mutate} = useSWR(
+        `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/detail-task/${id}`,
+        fetcher,
+        {
+            fallbackData:staticTask,
+        }
+    );
+    useEffect(() =>{
+        mutate();
+    },[mutate]);
+    if(router.isFallback || !task){
         return <div>Loading...</div>
     }
-    return (
-        <Layout title={ post.title }>
-            <p className="m-4">
+    
+    return(
+        <Layout title={task.title}>
+            <span className="m-4">
                 { "ID : "}
-                { post.id }
-            </p>
-            <p className="mb-4 text-xl font-bold">{ post.title }</p>
-            <p className="mb-12">{ post.created_at }</p>
-            <p className="px-10">{ post.content }</p>
-            <Link href="/blog-page">
+                { task.id }
+            </span>
+            <p className="mb-4 text-xl font-bold">{ task.title }</p>
+            <p className="mb-12">{ task.created_at }</p>
+            <Link href="/task-page">
                 <a className="flex cursor-pointer mt-12">
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -32,15 +45,15 @@ export default function Post({ post }){
                             clipRule="evenodd" 
                         />
                     </svg>
-                    <span>Back to blog-page</span>
+                    <span>Back to task-page</span>
                 </a>
             </Link>
         </Layout>
-    );
+    )
 }
 
 export async function getStaticPaths(){
-    const paths = await getAllPostIds();
+    const paths = await getAllTaskIds();
     return{
         paths,
         fallback: true,
@@ -48,10 +61,11 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps({ params }){
-    const post = await getPostData(params.id);
+    const staticTask = await getTaskData(params.id);
     return{
         props:{
-            post,
+            id:staticTask.id,
+            staticTask,
         },
         revalidate:3,
     };
