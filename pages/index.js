@@ -1,10 +1,13 @@
-import Auth from "../components/Auth";
-import Layout from "../components/Layout";
 
-export default function Home(){
-  return(
-    <Layout title='Login'>
-      <Auth />
-    </Layout>
-  );
+// import Image from 'next/image'
+import Layout from '../components/Layout';
+
+
+export default function Home() {
+
+    return (
+      <Layout title="Home">
+        <p className="text-4xl">  Hoshimoto yasunori</p>
+      </Layout>
+    )
 }

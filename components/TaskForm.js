@@ -54,9 +54,9 @@ export default function TaskForm({ taskCreated }){
                 />
                 <button
                     type="submit"
-                    className="bg-gray-500 ml-2 hover:bg-gray-600 text-sm px-2 py-1 rounded  uppercase"
+                    className="bg-gray-500 ml-2 hover:bg-gray-600 text-sm text-white px-2 py-1 rounded  uppercase"
                 >
-                    {selectedTask.id !== 0 ? "updateしよか" : "createです"}
+                    {selectedTask.id !== 0 ? "更新" : "作成"}
                 </button>
             </form>
         </div>

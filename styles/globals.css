@@ -2,3 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
+Link a #active{
+    color: tomato;
+}

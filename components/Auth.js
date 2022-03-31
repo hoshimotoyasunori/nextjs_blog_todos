@@ -11,6 +11,7 @@ export default function Auth(){
     const [password, setPassword] = useState("");
     const [isLogin, setIsLogin] = useState(true);
 
+
     const login = async () => {
         try{
             await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/auth/jwt/create/`,{
@@ -29,7 +30,7 @@ export default function Auth(){
                 const options = { path: "/" };
                 cookie.set("access_token", data.access, options);
             });
-            router.push("/main-page");
+            router.push("/");
         }catch(err){
             alert(err);
         }
@@ -67,7 +68,7 @@ export default function Auth(){
                     {isLogin ? "Login" : "Sign up"}
                 </h2>
             </div>
-            <form className="mt-8 space-y-6" onSubmit={authUser}>
+            <form className="mt-6 space-y-6" onSubmit={authUser}>
                 <input type="hidden" name="remember" value="true"/>
                 <div className="rounded-md shadow-sm -space-y-px">
                     <div>
@@ -100,21 +101,10 @@ export default function Auth(){
                     </div>
                 </div>
 
-                <div className="flex items-center justify-center">
-                    <div className="text-sm">
-                        <span 
-                            onClick={() => setIsLogin(!isLogin)} 
-                            className=" font-medium text-white-600 hover:text-indigo-500 cursor-pointer"
-                        >
-                            Change Mode ?
-                        </span>
-                    </div>
-                </div>
-
-                <div>
+                <div className='flex justify-center'>
                     <button 
                         type="submit" 
-                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="group relative w-60  flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                             <svg 
@@ -133,6 +123,16 @@ export default function Auth(){
                         </span>
                         {isLogin ? "Login with JWT" : "Create new user"}
                     </button>
+                </div>
+                <div className="flex items-center justify-center">
+                    <div className="text-sm">
+                        <span 
+                            onClick={() => setIsLogin(!isLogin)} 
+                            className=" font-medium text-white-600 hover:text-indigo-500 cursor-pointer"
+                        >
+                            {isLogin ? "※Create new user" : "※Login"}
+                        </span>
+                    </div>
                 </div>
             </form>
         </div>

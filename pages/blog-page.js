@@ -6,11 +6,12 @@ import Post from "../components/Post";
 export default function BlogPage({ filteredPosts }){
     return(
         <Layout title="Blog Page">
-        <ul>
-            {filteredPosts &&
-                 filteredPosts.map((post) => <Post key={post.id} post={post} />)}
-        </ul>
-            <Link href="/main-page">
+            <h1>Blog List</h1>
+            <ul>
+                {filteredPosts &&
+                    filteredPosts.map((post) => <Post key={post.id} post={post} />)}
+            </ul>
+            {/* <Link href="/">
                 <a className="flex cursor-pointer mt-12">
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -25,9 +26,9 @@ export default function BlogPage({ filteredPosts }){
                             d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" 
                         />
                     </svg>
-                    <span>Back to main page</span>
+                    <span>Back to home page</span>
                 </a>
-            </Link>
+            </Link> */}
         </Layout>
     );
 }
