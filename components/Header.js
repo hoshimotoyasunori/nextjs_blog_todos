@@ -34,11 +34,11 @@ function Header() {
                             Task
                         </a>
                     </Link>
-                    <Link  href="/blog-page">
+                    {/* <Link  href="/blog-page">
                         <a className={router.pathname === "/blog-page" ? activeStyle : normalStyle}>
                             Blog
                         </a>
-                    </Link>
+                    </Link> */}
                     <Link  href="/contact-page">
                         <a className={router.pathname === "/contact-page" ? activeStyle : normalStyle}>
                             Contact

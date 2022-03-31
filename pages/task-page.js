@@ -10,14 +10,12 @@ import Cookie from "universal-cookie";
 
 const cookie = new Cookie();
 
-
-
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const apiUrl = `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/list-task/`
+const signedIn = cookie.get("access_token");
 
 export default function TaskPage({staticfilteredTasks}){
 
-    const signedIn = cookie.get("access_token");
 
     const { data: tasks, mutate } =useSWR(apiUrl, fetcher,{
         fallbackData:staticfilteredTasks,
@@ -33,7 +31,7 @@ export default function TaskPage({staticfilteredTasks}){
         <StateContextProvider>
             <Layout title="Task Page">
                 <div className='flex flex-col ' >
-                <h1>Task List</h1>
+                <h1 className='text-2xl mb-2'>Task List</h1>
                     <ul>
                         {filteredTasks &&
                             filteredTasks.map((task) => <Task key={task.id} task={task} taskDeleted={mutate}/>)}
