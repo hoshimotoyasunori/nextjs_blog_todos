@@ -10,9 +10,8 @@ export default function Task({ task, taskDeleted }) {
 
     const { setSelectedTask } = useContext(StateContext);
     const signedIn = cookie.get("access_token");
-    // console.log(signedIn);
 
-    
+
     const deleteTask = async () => {
         await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/tasks/${task.id}`, {
             method: "DELETE",
@@ -30,8 +29,6 @@ export default function Task({ task, taskDeleted }) {
 
     return (
         <div>
-            {/* <span>{task.id}</span>
-                {" : "} */}
             <Link href={`/tasks/${task.id}`}>
                 <a className="cursor-pointer order-gray-600 border-b border-gray-900 hover:bg-gray-600">
                     {task.title}
