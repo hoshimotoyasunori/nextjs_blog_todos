@@ -29,11 +29,14 @@ export default function Task({ task, taskDeleted }) {
 
     return (
         <div>
-            <Link href={`/tasks/${task.id}`}>
+            {/* <Link href={`/tasks/${task.id}`}>
                 <a className="cursor-pointer order-gray-600 border-b border-gray-900 hover:bg-gray-600">
                     {task.title}
                 </a>
-            </Link>
+            </Link> */}
+                <p className="cursor-pointer order-gray-600 border-b border-gray-900 hover:bg-gray-600">
+                    {task.title}
+                </p>
             {signedIn == undefined ? 
                 "" 
             : 
