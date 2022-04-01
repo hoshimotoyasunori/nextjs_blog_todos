@@ -124,7 +124,7 @@ export default function Auth(){
                         {isLogin ? "Login with JWT" : "Create new user"}
                     </button>
                 </div>
-                <div className="flex items-center justify-center">
+                {/* <div className="flex items-center justify-center">
                     <div className="text-sm">
                         <span 
                             onClick={() => setIsLogin(!isLogin)} 
@@ -133,7 +133,7 @@ export default function Auth(){
                             {isLogin ? "※Create new user" : "※Login"}
                         </span>
                     </div>
-                </div>
+                </div> */}
             </form>
         </div>
         );

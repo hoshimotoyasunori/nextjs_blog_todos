@@ -31,7 +31,7 @@ function Header() {
                     </Link>
                     <Link  href="/task-page">
                         <a className={router.pathname === "/task-page" ? activeStyle : normalStyle}>
-                            Task
+                            Skill
                         </a>
                     </Link>
                     {/* <Link  href="/blog-page">
@@ -39,6 +39,11 @@ function Header() {
                             Blog
                         </a>
                     </Link> */}
+                    <Link  href="/work">
+                        <a className={router.pathname === "/work" ? activeStyle : normalStyle}>
+                            Work
+                        </a>
+                    </Link>
                     <Link  href="/contact-page">
                         <a className={router.pathname === "/contact-page" ? activeStyle : normalStyle}>
                             Contact
