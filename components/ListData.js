@@ -4,7 +4,7 @@ export const ListData = [
   {
     title:"現在のアプリ",
     url:"https://nextjs-blog-todos-sandy.vercel.app/",
-    skill:"Django-RestFramework,Next.js",
+    skill:"Django-RestFramework,Next.js,TailwindCSS",
     trial:"初めてdjango-restframeworkを使用したので、ユーザー認証においてJWT認証を使用しているが、認証の流れがいまいち理解できていなかったので、調査に時間がかかった。",
   },
   {

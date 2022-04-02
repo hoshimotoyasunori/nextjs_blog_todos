@@ -11,7 +11,7 @@ export default function Layout({ children, title = "Default title" }){
                     <title>{title}</title>
                 </Head>
                 <Header />
-                <main className="flex flex-1 justify-center items-center flex-col w-screen">
+                <main className="flex flex-1 justify-center items-center flex-col w-screen ">
                     {children}
                 </main>
                 <Footer />
