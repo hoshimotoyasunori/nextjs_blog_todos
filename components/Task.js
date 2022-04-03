@@ -34,7 +34,7 @@ export default function Task({ task, taskDeleted }) {
                     {task.title}
                 </a>
             </Link> */}
-                <p className="text-2xl cursor-pointer order-gray-600 border-b border-gray-900 hover:bg-gray-600 p-1">
+                <p className="text-2xl cursor-pointer order-gray-600 border-b border-gray-900 hover:bg-gray-600 hover:text-white p-1">
                     {task.title}
                 </p>
             {signedIn == undefined ? 
