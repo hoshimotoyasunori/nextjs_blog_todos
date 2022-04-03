@@ -6,7 +6,7 @@ import Footer from "./Footer"
 export default function Layout({ children, title = "Default title" }){
 
     return (
-            <div className="flex justify-center items-center flex-col min-h-screen text-gray-500 font-momo bg-opacity-50 bg-hero-img">
+            <div className="flex justify-center items-center flex-col min-h-screen text-gray-500 font-momo bg-opacity-50 bg-hero-img bg-no-repeat bg-cover">
                 <Head>
                     <title>{title}</title>
                 </Head>

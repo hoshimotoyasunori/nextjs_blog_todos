@@ -30,8 +30,8 @@ export default function TaskPage({staticfilteredTasks}){
     return(
         <StateContextProvider>
             <Layout title="Task Page">
-                <div className='flex flex-col ' >
-                <h1 className='text-2xl mb-2'>Skill SET</h1>
+                <div className='flex flex-col  bg-gray-300 p-5 mb-2' >
+                    <h1 className='text-4xl font-bold mb-2'>Skill SET</h1>
                     <ul>
                         {filteredTasks &&
                             filteredTasks.map((task) => <Task key={task.id} task={task} taskDeleted={mutate}/>)}

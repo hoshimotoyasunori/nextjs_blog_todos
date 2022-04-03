@@ -20,7 +20,7 @@ function Header() {
 
 
   return (
-    <div className="sticky top-0">
+    <div className="sticky top-0 z-50">
         <nav  className="bg-gray-800 w-screen" >
             <div className="flex items-center justify-center h-14 min-w-full">
                 <div className="flex min-w-full justify-around">
