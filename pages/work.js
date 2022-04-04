@@ -7,17 +7,17 @@ import Image  from 'next/image';
 function work() {
   return (
     <Layout title="work Page">
-      <ul className='min-h-screen mt-5'>
+      <ul className=' mt-5 flex w-screen min-w-full overflow-x-scroll no-scrollbar '>
         {ListData.map((value, key) => {
           return (
-            <li key={key} className="p-4 m-6 border bg-slate-300">
+            <li key={key} className="p-4 m-6 border bg-slate-300 flex-none w-30">
               <p className='text-2xl font-bold'>・{value.title}</p>
               <Image src={value.thumbnail} width={200} height={100} alt="サムネ"></Image>
               <p>Skill:{value.skill}</p>
               <Link href={value.url}>
                 <a className="text-blue-400 hover:bg-sky-300 font-bold">{value.url}</a>
               </Link>
-              <p>{value.trial}</p>
+              <p className='w-80'>{value.trial}</p>
             </li>
           );
         })}

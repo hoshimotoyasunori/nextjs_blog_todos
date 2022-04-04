@@ -3,6 +3,51 @@
 @import "tailwindcss/utilities";
 
 
-Link a #active{
-    color: tomato;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
 }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* .loop_wrap {
+    display: flex;
+    width: 100vw;
+    height: 400px;
+    overflow: hidden;
+}
+
+.loop_wrap li {
+width: auto;
+height: 100%;
+}
+
+@keyframes loop {
+    0% {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes loop2 {
+    0% {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+.loop_wrap li:first-child {
+    animation: loop 10s -5s linear infinite;
+}
+
+.loop_wrap li:last-child {
+    animation: loop2 10s linear infinite;
+} */
