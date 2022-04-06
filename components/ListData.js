@@ -23,6 +23,13 @@ export const ListData = [
     thumbnail:"/yuurea.png",
   },
   {
+    title:"Firebase-Line",
+    url:"https://react-line.vercel.app/",
+    skill:"react,firebase",
+    trial:"reactにて、Lineのようなリアルタイムチャットを作成。Googleアカウントにてログインを行い、firebaseを使い、リアルタイムチャット機能を追加し、vercelにてデプロイをした。苦労した点はデプロイ時の環境変数の設定と、firebaseの設定を調べるのに苦労した。",
+    thumbnail:"/firebase_line.png",
+  },
+  {
     title:"STREAMLIT-APP",
     url:"/",
     skill:"python,opencv,作成中",

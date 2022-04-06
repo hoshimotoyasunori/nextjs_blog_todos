@@ -12,7 +12,9 @@ function work() {
           return (
             <li key={key} className="p-4 m-6 border bg-slate-300 flex-none w-50">
               <p className='text-2xl font-bold'>・{value.title}</p>
-              <div className='my-4 flex justify-center items-center'><Image src={value.thumbnail} width={300} height={180} alt="サムネ"></Image></div>
+              <div className='my-4 flex justify-center items-center'>
+                <Image src={value.thumbnail} width={300} height={180} alt="サムネ" />
+              </div>
               <p>Skill:{value.skill}</p>
               <Link href={value.url}>
                 <a className="text-blue-400 hover:bg-sky-300 ">{value.url}</a>
