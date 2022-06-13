@@ -36,7 +36,7 @@ export const ListData = [
   {
     title: "TARGET-APP",
     url: "https://target-share-app-frontend.vercel.app/",
-    skill: "react(redux),DjangoRestFramework,material-UI",
+    skill: "react(redux),DjangoRestFramework",
     trial:
       "大谷翔平選手が高校時代に使用したと言われるマンダラチャートを作成し、その他ユーザーの投稿も核部分だけ覗き見ることができるようにした。",
     thumbnail: "/target-app.png",
